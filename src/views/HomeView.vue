@@ -10,7 +10,7 @@ import { RouterLink } from "vue-router";
           :to="{ name: 'signin' }"
           class="block text-lg font-medium text-gray-700 hover:text-white hover:bg-blue-500 transition-colors duration-300 rounded-md px-4 py-2 shadow-md"
         >
-          Login Screen
+          Signin Screen
         </router-link>
       </li>
       <li>
