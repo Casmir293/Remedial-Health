@@ -28,7 +28,7 @@ import SummaryCard from "@/components/dashboard/SummaryCard.vue";
 
 <style scoped>
 main {
-  padding: 0 20px 20px 40px;
+  padding: 0 20px 40px 20px;
   gap: 1.25rem;
   display: grid;
 }
