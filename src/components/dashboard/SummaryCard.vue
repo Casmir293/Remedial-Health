@@ -52,6 +52,7 @@ const productsWithProgress = computed(() =>
         <div class="flex justify-between items-center gap-2 mb-2">
           <v-progress-linear
             color="#0C66E4"
+            bg-color="#033"
             :model-value="supplier.progress"
             height="8"
             rounded
@@ -68,6 +69,7 @@ const productsWithProgress = computed(() =>
         <div class="flex justify-between items-center gap-2 mb-2">
           <v-progress-linear
             color="#A3F94E"
+            bg-color="#033"
             :model-value="product.progress"
             height="8"
             rounded

@@ -1,28 +1,33 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import { createRouter, createWebHistory } from "vue-router";
+import HomeView from "../views/HomeView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
-      name: 'home',
+      path: "/",
+      name: "home",
       component: HomeView,
     },
     {
-      path: '/signin',
-      name: 'signin',
-      component: () => import('../views/Signin.vue'),
+      path: "/signin",
+      name: "signin",
+      component: () => import("../views/Signin.vue"),
     },
     {
-      path: '/dashboard',
-      name: 'dashboard',
-      component: () => import('../views/Dashboard.vue'),
+      path: "/dashboard",
+      name: "dashboard",
+      component: () => import("../views/Dashboard.vue"),
     },
     {
-      path: '/suppliers',
-      name: 'suppliers',
-      component: () => import('../views/Suppliers.vue'),
+      path: "/suppliers",
+      name: "suppliers",
+      component: () => import("../views/Suppliers.vue"),
+    },
+    {
+      path: "/docs",
+      name: "docs",
+      component: () => import("../views/Docs.vue"),
     },
     {
       path: "/:pathMatch(.*)*",
@@ -30,6 +35,6 @@ const router = createRouter({
       component: () => import("@/views/NotFound.vue"),
     },
   ],
-})
+});
 
-export default router
+export default router;

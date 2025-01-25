@@ -4,7 +4,7 @@
   <header class="flex items-center justify-between px-5">
     <div class="flex items-center justify-between">
       <v-icon
-        icon="mdi-menu"
+        icon="mdi-apps"
         class="cursor-pointer hover:opacity-70 transition-all"
       />
       <img

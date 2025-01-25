@@ -1,12 +1,37 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, reactive } from "vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
 const passwordType = ref<string>("password");
+const isValid = ref(false);
+const loading = ref(false);
 
 const backNav = () => {
   router.back();
+};
+
+const form = reactive({
+  phone: "",
+  password: "",
+});
+
+const rules = reactive({
+  password: (v: string) => !!v || "Password is required",
+  phone: (v: string) => !!v || "Phone number is required",
+  valid_phone: (v: string) =>
+    /^0[789][01]\d{8}$/.test(v) || "Enter a valid phone number",
+});
+
+const handleSubmit = async () => {
+  if (!isValid.value) return;
+
+  loading.value = true;
+
+  setTimeout(() => {
+    router.push("/dashboard");
+    loading.value = false;
+  }, 3000);
 };
 </script>
 
@@ -36,65 +61,77 @@ const backNav = () => {
         </v-card-title>
         <!-- Phone number -->
         <v-card-text>
-          <div>
-            <label
-              for="phone"
-              class="block text-sm font-medium text-gray-700 mb-2"
-              >Phone</label
-            >
-            <v-text-field
-              id="phone"
-              placeholder="Enter phone number"
-              type="number"
+          <v-form @submit.prevent v-model="isValid">
+            <div>
+              <label
+                for="phone"
+                class="block text-sm font-medium text-gray-700 mb-2"
+                >Phone</label
+              >
+              <v-text-field
+                id="phone"
+                placeholder="Enter phone number"
+                color="#0C66E4"
+                variant="outlined"
+                density="comfortable"
+                rounded
+                v-model="form.phone"
+                :rules="[rules.phone, rules.valid_phone]"
+                maxlength="11"
+              />
+            </div>
+
+            <!-- Password -->
+            <div>
+              <label
+                for="password"
+                class="block text-sm font-medium text-gray-700 mb-2"
+                >Password</label
+              >
+              <v-text-field
+                id="password"
+                placeholder="Enter password"
+                @click:append-inner="
+                  passwordType == 'password'
+                    ? (passwordType = 'text')
+                    : (passwordType = 'password')
+                "
+                :append-inner-icon="
+                  passwordType == 'password'
+                    ? 'mdi-eye-outline'
+                    : 'mdi-eye-off-outline'
+                "
+                :type="passwordType"
+                color="#0C66E4"
+                variant="outlined"
+                density="comfortable"
+                rounded
+                maxlength="8"
+                v-model="form.password"
+                :rules="[rules.password]"
+              />
+            </div>
+
+            <v-checkbox label="Keep me signed in" color="#0C66E4"></v-checkbox>
+
+            <!-- Submit btn -->
+            <v-btn
+              :loading="loading"
+              type="submit"
+              @click="handleSubmit"
               color="#0C66E4"
-              variant="outlined"
-              density="comfortable"
-              rounded
-            />
-          </div>
-
-          <!-- Password -->
-          <div>
-            <label
-              for="password"
-              class="block text-sm font-medium text-gray-700 mb-2"
-              >Password</label
+              class="w-full text-lg py-2 font-medium"
+              >Proceed</v-btn
             >
-            <v-text-field
-              id="password"
-              placeholder="Enter password"
-              @click:append-inner="
-                passwordType == 'password'
-                  ? (passwordType = 'text')
-                  : (passwordType = 'password')
-              "
-              :append-inner-icon="
-                passwordType == 'password'
-                  ? 'mdi-eye-outline'
-                  : 'mdi-eye-off-outline'
-              "
-              :type="passwordType"
-              color="#0C66E4"
-              variant="outlined"
-              density="comfortable"
-              rounded
-            />
-          </div>
-
-          <v-checkbox label="Keep me signed in" color="#0C66E4"></v-checkbox>
-
-          <!-- Submit btn -->
-          <v-btn color="#0C66E4" class="w-full text-lg py-2 font-medium"
-            >Proceed</v-btn
-          >
-          <br />
-          <br />
-          <v-divider :thickness="1" class="border-opacity-100" />
-          <br />
-          <br />
-          <p class="cursor-pointer text-center text-sm text-[#44546F]">
-            Forgot Password
-          </p>
+            <br />
+            <br />
+            <v-divider :thickness="1" class="border-opacity-100" />
+            <br />
+            <br />
+            <p class="cursor-pointer text-center text-sm text-[#44546F]">
+              Forgot Password
+            </p>
+          </v-form>
         </v-card-text>
       </v-card>
     </div>

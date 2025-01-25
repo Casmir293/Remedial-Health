@@ -15,12 +15,4 @@
   </div>
 </template>
 
-<style scoped>
-.info-card {
-}
-
-@media (min-width: 768px) {
-  .info-card {
-  }
-}
-</style>
+<style scoped></style>

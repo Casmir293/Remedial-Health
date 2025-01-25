@@ -38,15 +38,18 @@ const tabs = [
 .selected-tab {
   border-bottom: 2px solid #0c66e4;
   color: #0c66e4;
+  transition: all 1.5s ease;
 }
 
 .nav-item {
   padding: 16px 8px;
   cursor: pointer;
-  transition: opacity 0.3s ease;
+  opacity: 1;
+  transition: all 0.3s ease;
 }
 
 .nav-item:hover {
   opacity: 0.8;
+  color: #0c66e4;
 }
 </style>

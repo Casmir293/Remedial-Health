@@ -1,33 +1,27 @@
-# Remedial-Health
+# Remedial Health Test
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a test task for Fullstack Developer role (Vue.js/Laravel) at [Remedial Health](https://remedial.health). Candidate's were required to build a static user interface of the provided [Figma Design](https://www.figma.com/design/bL4ZubJevMu2sLIsgBcMm0/Test-Work?node-id=0-1&p=f&t=H38Aa825Qq3Mt3Je-0) and also participate in a [HackerRank Data Structures and Algorithms challenge](https://www.hackerrank.com/full-stack-laravel-remedial-health).
 
-## Recommended IDE Setup
+## Duration - [4 Days]
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Wednesday, Jan 22nd, 2025 - Sunday, Jan 26th, 2025.
 
-## Type Support for `.vue` Imports in TS
+## Result
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+- Live URL: [https://remedial-health.vercel.app](https://remedial-health.vercel.app/).
+- Source Code: [https://github.com/Casmir293/Remedial-Health](https://github.com/Casmir293/Remedial-Health).
+- HackerRank DSA Challenge: Username is casmir293 - [https://www.hackerrank.com/contests/full-stack-laravel-remedial-health/leaderboard](https://www.hackerrank.com/contests/full-stack-laravel-remedial-health/leaderboard).
 
-## Customize configuration
+## Tech Stack
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+### Frontend task
 
-## Project Setup
+- Vue.js: The Progressive JavaScript Framework.
+- Vuetify: A Material Design component framework used for building a clean and accessible UI.
+- TypeScript: Ensures type safety and enhanced code quality throughout the project.
+- Tailwind CSS: A utility-first CSS framework used for responsive and customizable designs.
+- Apex Chart: A free and open-source modern charting library that helps developers to create beautiful and interactive visualizations for web pages.
 
-```sh
-npm install
-```
+### HackerRank DSA Challenge
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
+- PHP: A popular general-purpose scripting language that is especially suited to web development.
